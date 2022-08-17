@@ -1,0 +1,16 @@
+.checkout-body{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.checkoutBody{
+    background-color: #fff;
+    padding: 30px 20px 30px 20px;
+
+}
+.checkoutBody h3{
+    font-weight: 300;
+    color: rgb(99, 99, 99);
+}

@@ -1,0 +1,26 @@
+table{
+    width: 100%;
+    margin: 25px 0px 25px 0px;
+}
+
+thead{
+    background-color: #545554;
+    color: #fff;
+    height: 40px;
+}
+
+th{
+    font-weight: 300;
+    padding-left: 16px;
+}
+
+tbody{
+    width: 100%;
+}
+
+td{
+   
+    padding-left: 16px;
+    border-bottom: 1px solid #E8E8E8;
+    height: 55px;
+}

@@ -1,0 +1,64 @@
+    .review-checkout{
+        width:100%;
+        height: 100px;
+        margin-top: 25px;
+        display: flex;
+    }
+
+    .apply-delivery-charges{
+        width:50%;
+        height: 25px;
+        border: none;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .apply-delivery-charges p{
+        margin: 0px;
+        font-size: 10px;
+    }
+
+    .review-checkout-box{
+        width: 45%;
+        margin-left: 15px;  
+    }
+
+    .sub-total{
+        border: none;
+        background-color: #fff;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .sub{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sub p{
+        font-size: 15px;
+        margin: 0px;
+    }
+
+    .checkout-button{
+        background-color: #84c225;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    .checkout-button:hover {
+        background-color: #9be32f;
+    }
+
+    .checkout-button p{
+        margin: 0px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+    }

@@ -1,0 +1,33 @@
+.content-col{
+border-left: 1px solid rgb(231, 231, 231);
+
+}
+
+.content-col h3{
+    color: #58595b;
+    font-weight: 400;
+}
+
+.all-products{
+    width: 12%;
+    display: flex;
+    align-items: center; 
+    margin: 20px 0px 0px 0px;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 2px solid #84c225;
+}
+
+.all-products p{
+    margin: 0px 0px 0px 10px;
+}
+
+hr{
+    margin: 0px;
+}
+
+.card-container{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

@@ -1,0 +1,157 @@
+    .main-navbar {
+      padding: 0px;
+      background-color: #fff !important;
+    }
+
+    .nav-shadow{
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+    .navbar-main-container {
+      padding: 0px;
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 1px solid rgb(231, 231, 231);
+    }
+
+
+    .dropbtn {
+      text-transform: uppercase;
+      background-color: #84c225;
+      color: white;
+      font-size: 16px;
+      border: none;
+      font-size: 16px;
+      padding: 8px 6px;
+      font-weight: bold;
+
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 258px;
+      margin-left: 0px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content p {
+      color: rgb(57, 56, 56);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content p:hover {
+      background-color: #ddd;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .contacts {
+      height: 25px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    
+    }
+    .contacts-option {
+      display: flex;
+      align-items: center;
+      margin: 0px 10px 0px 0px;
+      padding: 2px;
+      color: rgb(90, 88, 88);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .contacts-option :hover {
+      color: #84c225;
+    }
+    
+    .bucket-button-box{
+      position: relative;
+      display: inline-block;
+    }
+    .bucket-button{
+      background-color: #f2f3f2;
+      width: 80%;
+      height: 65px;
+      width: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      
+    }
+
+    .navbar-container{
+      
+      width: 100%;
+      margin: 0px;
+      display: flex;
+    }
+
+    .logo-box{
+      width:20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    
+      
+    }
+
+    .contact-bucket-box{
+      width:90%;
+      display: flex;
+      flex-direction: column;
+     
+      align-items: flex-end;
+
+
+    }
+
+    .bucket-item-review{
+      min-width: 590px;
+      display: none;
+      background-color: #f2f3f2;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      right:0px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .bucket-item-container{
+      background-color: #fff;
+      min-height: 90px;
+    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bucket-button:hover{
+      border: 1px solid rgb(216, 213, 213);
+      border-bottom: 0;
+      background-color: #f2f3f2d8;
+     
+    }
+
+    .bucket-button-box:hover .bucket-item-review{
+      display: block;
+      border: 1px solid rgb(209, 208, 208);
+      border-top: 0;
+    } 
+

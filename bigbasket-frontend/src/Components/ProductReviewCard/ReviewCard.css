@@ -1,0 +1,59 @@
+.review-card {
+  width: 581px;
+  height: 81px;
+  border: none;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7px;
+}
+
+.image-review-box {
+  height: 68px;
+  width: 68px;
+  border: 1px solid rgb(173, 173, 173);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-brand-review {
+  height: 68px;
+  padding: 0px 0px 0px 10px;
+  width: 40%;
+  cursor: pointer;
+}
+
+.name-brand {
+  margin: 0px 8px 0px 0px;
+  font-size: small;
+}
+
+.qty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20%;
+  height: 68px;
+  cursor: pointer;
+}
+
+.qty-box p {
+  font-weight: 600;
+  margin: 0px;
+}
+.final-price-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+
+  height: 68px;
+  cursor: pointer;
+}
+
+.final-price-box p {
+  margin: 0px;
+}
