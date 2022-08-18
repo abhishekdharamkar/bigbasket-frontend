@@ -4,10 +4,12 @@ import { useSelector ,useDispatch} from 'react-redux';
 import { removeFromCart } from '../../Redux/Action/Action';
 const ReviewCard = () => {
   const dispatch = useDispatch();
-  const product = useSelector(
-    (state) => state.updateCart.cartItems
+  
+  const product= useSelector(
+    (state) => state.updateCart?.cartItems 
   );
-
+ 
+console.log("lol",product)
   const handleClick = ( id) => {
     console.log(id,"review");
    dispatch( removeFromCart(id) )
@@ -17,11 +19,9 @@ const ReviewCard = () => {
   // })
     console.log(id,"review");
   };
-  if(product!=null){
+  // if(product!=null){
       
-product.map(product=>{
-    
-  })
+
   // {filteredProducts_Data?.map((el) => {
   //   return <div key={el._id}>
   //      <ProductCard  data={el} />
@@ -53,7 +53,7 @@ product.map(product=>{
     )})}
     </div>
   )
-  }
+  // }
 }
 
 export default ReviewCard;

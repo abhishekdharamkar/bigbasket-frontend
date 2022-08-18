@@ -5,14 +5,16 @@ import "./ReviewCheckout.css";
 const ReviewCheckout = () => {
 
   const product = useSelector(
-    (state) => state.updateCart.cartItems
+    (state) => state.updateCart?.cartItems
   );
-
   var total=0;
+  if(product!=null){
+  
   product.map(e=>{
     total= total+e.qty*e.price
    
   })
+}
   console.log(total,"qwerty")
 
     const navigate = useNavigate();

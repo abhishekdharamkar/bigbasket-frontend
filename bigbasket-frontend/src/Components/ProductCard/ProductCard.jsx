@@ -8,19 +8,9 @@
   const [qty,setQ]=useState(1)
     const dispatch = useDispatch();
     const handleClick = (name,url,price) => {
-      
       console.log(name,url,price,qty)
-
-      dispatch((createCart(name,url,price,qty)))
-      // dispatch({
-      //   type: CART_ADD_ITEM,
-      //   payload: {
-      //     productID: data.product._id,
-      //     name: name,
-      //     image: url,
-      //     price: price,
-      //     qty,
-      //   },   });
+    dispatch((createCart(name,url,price,qty)))
+    
   }
     return (
       <div className="product-card">

@@ -2,7 +2,7 @@ import { actiontypes } from "../Action/ActionTypes";
 
 // const initialstate = null;
 export const gettingProductData = (state = {}, { type, payload }) => {
-  console.log("event",payload)
+  
   switch (type) {
     case actiontypes.GET_PRODUCT_DATA:
       return {...state, products: payload
@@ -44,7 +44,7 @@ export const updateCart = (state = { cartItems: [] }, { type, payload }) => {
   
   // product_Array.push(payload)
   const item = payload;
-  console.log("in root reducer")
+  console.log("in root reducer",payload)
   switch (type) {
     
     case actiontypes.CART_ADD_ITEM:
@@ -60,6 +60,7 @@ export const updateCart = (state = { cartItems: [] }, { type, payload }) => {
       // if(state.cartItems[0].name===item.name){
       //   console.log("assa",)
       // }
+      console.log("ACTIONs",state.cartItems)
       return { 
         ...state,
         cartItems: [...state.cartItems, item],
