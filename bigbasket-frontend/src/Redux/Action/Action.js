@@ -4,31 +4,33 @@ import { actiontypes } from "./ActionTypes";
 let product_data = [];
 export const getProduct = () => async (dispatch) => {
   try {
-    console.log(process.env.REACT_APP_GET_DATA_URL)
+    // console.log(process.env.REACT_APP_GET_DATA_URL)
     const response = await axios.get("http://localhost:8080/api/v1/productList");
 
     
     product_data = response.data;
-    console.log("responseeeeeeeeeeeeeeeeeeeeeeee",product_data)
+   // console.log("responseeeeeeeeeeeeeeeeeeeeeeee",product_data)
     dispatch({
       type: actiontypes.GET_PRODUCT_DATA,
       payload: product_data,
     });
 
-    dispatch(filteredProducts("herbs"));
+    dispatch(filteredProducts("allProducts"));
   } catch (error) {
     console.log("get data error", error);
   }
 };
 
 export const filteredProducts = (params) => async (dispatch) => {
+  console.log("param",params)
   try {
     let filteredProducts = [];
-    if (params === "allProducts") {
+    //params === "allProducts"
+    if (true) {
+      // JSON.parse(product_data)
       filteredProducts = product_data;
     } else {
       filteredProducts = product_data.filter((el) => el.category === params);
-      console.log(filteredProducts);
     }
 
     dispatch({
@@ -40,16 +42,38 @@ export const filteredProducts = (params) => async (dispatch) => {
   }
 };
 
-export const incQuantity = (quantity) => {
+// export const incQuantity = (quantity) => {
+//   return {
+//     type: actiontypes.INC_QUANTITY,
+//     payload: quantity,
+//   };
+// };
+
+// export const decQuantity = (quantity) => {
+//   return {
+//     type: actiontypes.DEC_QUANTITY,
+//     payload: quantity,
+//   };
+// };
+
+export const createCart = (name,url,price,qty) => {
+ console.log("yess")
+  // product={name,url,price,qty}
+  console.log("ACTION",name)
   return {
-    type: actiontypes.INC_QUANTITY,
-    payload: quantity,
+    type: actiontypes.CART_ADD_ITEM,
+    payload: {name,url,price,qty}
   };
 };
 
-export const decQuantity = (quantity) => {
-  return {
-    type: actiontypes.DEC_QUANTITY,
-    payload: quantity,
-  };
-};
+export const removeFromCart = (index) => {
+  console.log("yess",index)
+   // product={name,url,price,qty}
+  //  console.log("ACTION",index)
+   return {
+     type: actiontypes.REMOVE_FROM_BASKET,
+     payload: index
+   };
+   
+ };
+ 

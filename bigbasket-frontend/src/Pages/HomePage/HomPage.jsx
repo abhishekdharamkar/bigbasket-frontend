@@ -15,6 +15,7 @@ const HomPage = () => {
    <BankOfferSection/>
     <BodySection/>
     
+    
     </div>
   )
 }

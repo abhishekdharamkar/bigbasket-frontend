@@ -4,8 +4,13 @@ import ReviewCard from "../../Components/ProductReviewCard/ReviewCard";
 import ReviewCheckout from "../../Components/ReviewCheckout/ReviewCheckout";
 import logo2 from "../../Assets/Big-basket1.png";
 import "./Navbar.css";
+import { useSelector } from "react-redux";
 const Navbar = () => {
   
+  const count = useSelector(
+    (state) => state.updateCart.cartItems
+  );
+
  const [fixNavbar, setFixNavbar] = useState(true);
  const changeNavBar = ()=>{
        if(window.scrollY>= 25){
@@ -86,7 +91,7 @@ const Navbar = () => {
               ></i>
               <div className="bucket-items">
                 <h6>
-                  My Basket <br /> 0 items
+                  My Basket <br /> {count.length} items
                 </h6>
               </div>
               </div>

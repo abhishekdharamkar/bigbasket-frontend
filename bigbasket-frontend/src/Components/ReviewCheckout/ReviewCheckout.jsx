@@ -1,7 +1,19 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {useNavigate} from "react-router";
 import "./ReviewCheckout.css";
 const ReviewCheckout = () => {
+
+  const product = useSelector(
+    (state) => state.updateCart.cartItems
+  );
+
+  var total=0;
+  product.map(e=>{
+    total= total+e.qty*e.price
+   
+  })
+  console.log(total,"qwerty")
 
     const navigate = useNavigate();
   return (
@@ -13,7 +25,7 @@ const ReviewCheckout = () => {
         <div className="sub-total">
             <div className="subtotal-price sub">
                 <p>Sub Total:</p>
-                <p>Rs.182.00</p>
+                <p>{total}</p>
             </div>
             <div className="delivery-charges sub">
                 <p>Delivery:</p>
