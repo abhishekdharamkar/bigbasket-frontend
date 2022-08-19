@@ -7,9 +7,9 @@ import "./Navbar.css";
 import { useSelector } from "react-redux";
 const Navbar = () => {
   // const
-  //  count = useSelector(
-  //   (state) => state.updateCart?.cartItems
-  // );
+   const count = useSelector(
+    (state) => state.updatingCart?.cartItems
+  );
 
  const [fixNavbar, setFixNavbar] = useState(true);
  const changeNavBar = ()=>{
@@ -91,7 +91,7 @@ const Navbar = () => {
               ></i>
               <div className="bucket-items">
                 <h6>
-                  My Basket <br /> 0 items
+                  My Basket <br /> {count.length} items
                 </h6>
               </div>
               </div>

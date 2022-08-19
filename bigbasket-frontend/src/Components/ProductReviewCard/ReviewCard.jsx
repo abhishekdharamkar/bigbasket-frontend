@@ -6,10 +6,10 @@ const ReviewCard = () => {
   const dispatch = useDispatch();
   
   const product= useSelector(
-    (state) => state.updateCart?.cartItems 
+    (state) => state.updatingCart?.cartItems 
   );
  
-console.log("lol",product)
+console.log("pllp",product)
   const handleClick = ( id) => {
     console.log(id,"review");
    dispatch( removeFromCart(id) )

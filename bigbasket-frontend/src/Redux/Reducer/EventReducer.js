@@ -43,29 +43,52 @@ var product_Array=[];
 export const updateCart = (state = { cartItems: [] }, { type, payload }) => {
   
   // product_Array.push(payload)
-  const item = payload;
-  console.log("in root reducer",payload)
+  
+  
   switch (type) {
     
     case actiontypes.CART_ADD_ITEM:
-    //  console.log("qqqqqqqqqqqqqqqqqqqqqqqq",state.cartItems[0])
-      // state.cartItems.map=(name,index)=>{
-      //   console.log("qqqqqqqqqqqqqqqqqqqqqqqq",state.cartItems[index])
-      //   if(name===item.name){
-      //     console.log("qqqqqqqqqqqqqqqqqqqqqqqq")
-      //   }
-      // }
-      //const dupe = state.find(obj => obj.name === item.name);
+      console.log("lppl",state.cartItems)
+      const item = payload;
+      const existItem = state.cartItems.find(
+        (x) => x.name === item.name
+      );
+
+      if (existItem) {
+        return {
+          ...state,
+          cartItems: state.cartItems.map((x) =>
+            x.name === existItem.name ? item : x
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          cartItems: [...state.cartItems, item],
+        };
+      }
+
+
+
+    //   const item = payload;
+    // //  console.log("qqqqqqqqqqqqqqqqqqqqqqqq",state.cartItems[0])
+    //   // state.cartItems.map=(name,index)=>{
+    //   //   console.log("qqqqqqqqqqqqqqqqqqqqqqqq",state.cartItems[index])
+    //   //   if(name===item.name){
+    //   //     console.log("qqqqqqqqqqqqqqqqqqqqqqqq")
+    //   //   }
+    //   // }
+    //   //const dupe = state.find(obj => obj.name === item.name);
       
-      // if(state.cartItems[0].name===item.name){
-      //   console.log("assa",)
-      // }
-      console.log("ACTIONs",state.cartItems)
-      return { 
-        ...state,
-        cartItems: [...state.cartItems, item],
+    //   // if(state.cartItems[0].name===item.name){
+    //   //   console.log("assa",)
+    //   // }
+    //   console.log("ACTIONsss",state)
+    //   return { 
+    //     ...state,
+    //     cartItems: [...state.cartItems, item],
         
-      };
+    //   };
       case actiontypes.REMOVE_FROM_BASKET:
         console.log("payload",payload)
         const index = state.cartItems.findIndex(
