@@ -4,36 +4,56 @@ import ReviewCard from "../../Components/ProductReviewCard/ReviewCard";
 import ReviewCheckout from "../../Components/ReviewCheckout/ReviewCheckout";
 import logo2 from "../../Assets/Big-basket1.png";
 import "./Navbar.css";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
+import { getProduct , filteredProducts } from "../../Redux/Action/Action";
 const Navbar = () => {
   // const
    const count = useSelector(
     (state) => state.updatingCart?.cartItems
   );
 
- const [fixNavbar, setFixNavbar] = useState(true);
+  const dispatch =useDispatch();
+  //send filterd data
+ function filtering(type){
+console.log("type",type)
+
+dispatch(getProduct(type))
+}
+
+  //filter
+
+ const [changeNavbar, setChangeNavbar] = useState(true);
  const changeNavBar = ()=>{
        if(window.scrollY>= 25){
-        setFixNavbar(false);
+        setChangeNavbar(false);
        }
 
        if(window.scrollY<=25){
-        setFixNavbar(true);
+        setChangeNavbar(true);
        }
  }
-
+//search
+const [inputText, setInputText] = useState("");
+let inputHandler = (e) => {
+  //convert input text to lower case
+  // var lowerCase = e.target.value.toLowerCase();
+  var lowerCase = inputText.toLowerCase();
+  dispatch(filteredProducts(lowerCase))
+};
 
  window.addEventListener("scroll", changeNavBar);
 
   return (
-    <nav className={fixNavbar?"navbar bg-light main-navbar":"navbar bg-light main-navbar fixed-top nav-shadow "}>
+    <nav className={changeNavbar?"navbar bg-light main-navbar":"navbar bg-light main-navbar fixed-top nav-shadow "}>
       <div className="container navbar-main-container">
         <div className="navbar-container">
-          <div className="logo-box">
-            <img src={fixNavbar?logo1:logo2} alt="logo1" height={fixNavbar?"100px":"45px"} width={fixNavbar?"110px":"55px"} />
-            <div className={fixNavbar?"dropdown":"dropdown d-none"}>
-              <button className="dropbtn ">
-                <p className="" style={{"height":"15px","width":"245px" }}><span style={{float:"left"}}>Shop By Category</span>
+          <div className={changeNavbar?"logo-box":"logo-box2"}>
+            <img className="mt-1" src={changeNavbar?logo1:logo2} alt="logo1"  height={changeNavbar?"75px":"45px"} width={changeNavbar?"180px":"55px"} />
+            
+            <div className={"dropdown"} >
+              {/* style={{width:changeNavbar?"257px":"100px" }} */}
+              <button className={changeNavbar?"dropbtn" :"dropbtn bg-white text-dark"}>
+                <p className="" style={{height:changeNavbar?"15px":"10px",width:changeNavbar?"245px":"64px" }}><span style={{float:"left"}}>{changeNavbar?"Shop By Category":"Shop"}</span>
                 <i
                   className="fa fa-angle-down"
                   style={{ float:"right",margin: "5px 0px 0px 0px" }}
@@ -42,17 +62,20 @@ const Navbar = () => {
                 </p>
               </button>
               <div className="dropdown-content">
-                <p style={{ margin: "0px", padding: "5px" }}>Fruits</p>
+                <p style={{ margin: "0px", padding: "5px" }} onClick={(e) => filtering("fruits")}>Fruits & Vegetables</p>
                 <hr style={{ margin: "0px" }} className="solid" />
-                <p style={{ margin: "0px", padding: "5px" }}>Vegetables</p>
-                <hr style={{ margin: "0px" }} className="solid" />
-                <p style={{ margin: "0px", padding: "5px" }}>Herbs</p>
+                <p style={{ margin: "0px", padding: "5px" }} onClick={(e) => filtering("snacks")}>Snacks-Branded-Foods</p>
               </div>
+              {/* <form className="form-inline  " style={{"margin-left":"20rem" , width:"17rem" ,"display":"flex"}}>
+  <input className="form-control mr-sm-2" type="search"   onChange={(e) =>  dispatch(filteredProducts((e.target.value)))} placeholder="Search" aria-label="Search"/>
+  <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={(e) => inputHandler()}
+  >Search</button>
+</form> */}
             </div>
           </div>
 
           <div className="contact-bucket-box">
-            <div className={fixNavbar?"contacts":"contacts d-none"}>
+            <div className={changeNavbar?"contacts":"contacts d-none"}>
               <div className="phone contacts-option">
                 <i
                   style={{ margin: "0px 5px 0px 5px" }}
@@ -95,11 +118,16 @@ const Navbar = () => {
                 </h6>
               </div>
               </div>
+              
               <div className="bucket-item-review">
-              {/* <div className="container bucket-item-container">
+              
+             {count.length==0? 
+               <div className="container bucket-item-container">
                 <p>Your basket is empty. Start shopping now!</p>
-              </div> */}
+              </div> 
+              :
               <ReviewCard/>
+            }
               <ReviewCheckout/>
             </div>
             </div>

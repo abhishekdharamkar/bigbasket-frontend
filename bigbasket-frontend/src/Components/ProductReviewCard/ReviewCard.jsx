@@ -32,9 +32,7 @@ console.log("pllp",product)
 
   if(product!=null){
       
-product.map(product=>{
-    
-  })
+
 
   // {filteredProducts_Data?.map((el) => {
   //   return <div key={el._id}>

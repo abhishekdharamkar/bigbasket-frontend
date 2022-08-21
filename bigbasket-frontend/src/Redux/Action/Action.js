@@ -2,7 +2,7 @@ import axios from "axios";
 import { actiontypes } from "./ActionTypes";
 
 let product_data = [];
-export const getProduct = () => async (dispatch) => {
+export const getProduct = (type="allproduct") => async (dispatch) => {
   try {
     // console.log(process.env.REACT_APP_GET_DATA_URL)
     const response = await axios.get("http://localhost:8080/api/v1/productList");
@@ -15,22 +15,34 @@ export const getProduct = () => async (dispatch) => {
       payload: product_data,
     });
 
-    dispatch(filteredProducts("allProducts"));
+    dispatch(filteredProducts(type));
   } catch (error) {
     console.log("get data error", error);
   }
 };
 
 export const filteredProducts = (params) => async (dispatch) => {
-  console.log("param",params)
+  //console.log("param",params)
   try {
-    let filteredProducts = [];
+    var filteredProducts = [];
     //params === "allProducts"
-    if (true) {
+console.log("param",params)
+    if (params) {
       // JSON.parse(product_data)
+     //console.log("param",product_data.productname)
+     
+    //  filteredProducts = product_data.filter((el) => el.productname.includes(params));
+    }
+    if(params==="allproduct"){
       filteredProducts = product_data;
-    } else {
-      filteredProducts = product_data.filter((el) => el.category === params);
+    } 
+    else {
+      if(params==="fruits"){
+        filteredProducts = product_data.filter((el) => el.id <=9);
+
+      }
+      if(params==="snacks")
+      filteredProducts = product_data.filter((el) => el.id >=10);
     }
 
     dispatch({
@@ -57,9 +69,7 @@ export const filteredProducts = (params) => async (dispatch) => {
 // };
 
 export const createCart = (name,url,price,qty) => {
- console.log("yess")
-  // product={name,url,price,qty}
-  console.log("ACTION",name)
+ 
   return {
     type: actiontypes.CART_ADD_ITEM,
     payload: {name,url,price,qty}
@@ -77,3 +87,16 @@ export const removeFromCart = (index) => {
    
  };
  
+ //
+ export const searchProduct = (keyword) => {
+  console.log("keyword",keyword)
+
+  try {
+    let searchProduct = [];
+    const response =  axios.get("http://localhost:8080/api/v1/product/search/"+keyword);
+    console.log("response",response.data)
+    filteredProducts=response.data
+  } catch (error) {
+    console.log("filtered product error", error.message);
+  }
+};
