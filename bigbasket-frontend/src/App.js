@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import HomPage from './Pages/HomePage/HomPage';
-import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom'
-import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
+import HomePage from './Pages/HomePage/HomPage';
 import { useDispatch } from 'react-redux/es/exports';
 import { getProduct } from './Redux/Action/Action';
+import Checkout from './Pages/CheckoutResponsive/Checkout';
+import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom'
+
 const App = () => {
   const dispatch = useDispatch();
 
@@ -14,9 +15,9 @@ const App = () => {
   return (
   <Router>
     <Routes>
-      <Route path="/" element={<HomPage/>}></Route>
-      {/* <Route path="/checkout" element={<CheckoutPage/>}></Route> */}
-      <Route path='*' element={<HomPage/>}></Route>
+      <Route path="/" element={<HomePage/>}></Route>
+      <Route path="/checkout" element={<Checkout/>}></Route>
+      <Route path='*' element={<HomePage/>}></Route>
     </Routes>
   </Router>
   )

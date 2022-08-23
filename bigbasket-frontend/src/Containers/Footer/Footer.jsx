@@ -10,6 +10,7 @@ function Footer() {
             <div className="col col-lg-2 col-sm-12 col-xs-12 col-wraper app-badge">
                 <h5>Download Our App</h5>
                 <img alt="GooglePlay-BB"
+                className="mt-2"
                     src="https://www.bbassets.com/static/v2571/custPage/build/content/img/Google-App-store-icon.png" />
                 <img
                     alt="AppStore-BB"

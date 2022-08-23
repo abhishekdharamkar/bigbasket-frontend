@@ -13,7 +13,7 @@ export const gettingProductData = (state = {}, { type, payload }) => {
   }
 };
 
-// const initialQuantity = 1;
+
 export const changeQuant = (state = 1, { type, payload }) => {
   switch (type) {
     case actiontypes.INC_QUANTITY:
@@ -68,27 +68,6 @@ export const updateCart = (state = { cartItems: [] }, { type, payload }) => {
         };
       }
 
-
-
-    //   const item = payload;
-    // //  console.log("qqqqqqqqqqqqqqqqqqqqqqqq",state.cartItems[0])
-    //   // state.cartItems.map=(name,index)=>{
-    //   //   console.log("qqqqqqqqqqqqqqqqqqqqqqqq",state.cartItems[index])
-    //   //   if(name===item.name){
-    //   //     console.log("qqqqqqqqqqqqqqqqqqqqqqqq")
-    //   //   }
-    //   // }
-    //   //const dupe = state.find(obj => obj.name === item.name);
-      
-    //   // if(state.cartItems[0].name===item.name){
-    //   //   console.log("assa",)
-    //   // }
-    //   console.log("ACTIONsss",state)
-    //   return { 
-    //     ...state,
-    //     cartItems: [...state.cartItems, item],
-        
-    //   };
       case actiontypes.REMOVE_FROM_BASKET:
         console.log("payload",payload)
         const index = state.cartItems.findIndex(
@@ -109,51 +88,9 @@ export const updateCart = (state = { cartItems: [] }, { type, payload }) => {
           ...state,
           cartItems: newBasket
         }
-        // ...state,
-        // // basket: [...state.basket,action.item],
-        // product_Array:[...state.product_Array,payload],};
-    
-
-    // case actiontypes.DEC_QUANTITY:
-    //   if (payload.quantity > 0) {
-    //     return { ...payload, quantity: payload.quantity - state };
-    //   }
-    //   break;
+   
 
     default:
       return state;
   }
 };
-
-// export const removeFromCart = (state = { cartItems }, { type, payload }) => {
-  
-//   // product_Array.push(payload)
-//   const item = payload;
-//   console.log("in root reducer")
-//   switch (type) {
-//     case actiontypes.CART_ADD_ITEM:
-//       return { 
-//         ...state,
-//         cartItems: [...state.cartItems, item],
-        
-//       };
-      
-//     default:
-//       return state;
-//   }
-// };
-// export const changeQuantity = (state = initialQuantity, {type, payload})=>{
-//     switch (type) {
-//         case actiontypes.INC_QUANTITY :
-//             return {...payload, quantity: payload.quantity+state}
-
-//         case actiontypes.DEC_QUANTITY :
-//             if(payload.quantity > 0){
-//                 return {...payload, quantity:payload.quantity-state}
-//             }
-//             break;
-
-//         default:
-//             break;
-//     }
-// }

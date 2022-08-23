@@ -28,34 +28,38 @@ const ReviewCheckout = () => {
  var time = new Date();
       async function eSubmit(){
         console.log(product)
-        if(product!=null){
+        if(product!=null && email!=null){
   
           product.map(e=>{
            itemList= itemList+e.name +"-"+ e.qty+",";
            
           })
           //send to a database
-            console.log( {"email":email,
-            "cart":itemList,
-            "total":total,
-            "date":time.toDateString()})
           try {
             const response = await axios({
-              url: "http://localhost:8080/checkout",
+              url: (process.env.REACT_APP_POST_DATA_URL),
               headers: {
                 "Content-Type": "application/json",
               },
               method: "post",
               data: {
                 "email":email,
-                "cart":itemList,
+                "items":itemList,
                 "total":total,
-                "date":time.toDateString()
+                "date":time
               },
+             
             });
+            if(response.data.data==="success"){
+              window.location.href = "http://localhost:3000/";
+              alert("purchase successful ")
+            }else{
+              alert("purchase failed")
+            }
           } catch (error) {
             console.log(error);
           }
+          
         }
         else {
           alert("select the item First");
@@ -86,7 +90,7 @@ const ReviewCheckout = () => {
             </div>
         </div> 
         <div onClick={()=> eSubmit()} className="checkout-button">
-            <p >View Basket & Checkout</p>
+            <p >Checkout</p>
         </div>
       </div>
     </div>

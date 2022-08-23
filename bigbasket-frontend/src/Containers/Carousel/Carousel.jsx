@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Carousel.css";
 const Carousel = () => {
   return (
     <div className="container-fluid" style={{margin:"20px 0px 30px 0px"}}>
@@ -42,7 +42,7 @@ const Carousel = () => {
             aria-label="Slide 4"
           ></button>
         </div>
-        <div className="carousel-inner">
+        <div className="carousel-inner carousel-main">
           <div className="carousel-item active">
             <img
               src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_gwf_happychef_460-250722.jpg"

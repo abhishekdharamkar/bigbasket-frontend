@@ -20,9 +20,9 @@ BodySection = () => {
           </div>
           <hr className="solid" />
 
-          <div className="container-fluid card-container">
+          <div className="container-fluid card-container row">
           {filteredProducts_Data?.map((el) => {
-            return <div key={el._id}>
+            return <div key={el._id} className="col-md-4">
                <ProductCard  data={el} />
                
             </div>

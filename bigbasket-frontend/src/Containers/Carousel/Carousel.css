@@ -1,0 +1,8 @@
+@media only screen and (max-width: 988px){
+.carousel-main{
+    margin-top: 5.6rem;
+}
+.carousel-indicators{
+
+    display: none !important;
+}}

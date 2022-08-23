@@ -6,6 +6,5 @@ import rootReducers from "./Reducer/RootReducer";
 const composeEhancers = composeWithDevTools(
     applyMiddleware(thunk)
 )
-
 const store = createStore(rootReducers, composeEhancers);
 export default store;

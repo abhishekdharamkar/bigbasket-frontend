@@ -3,9 +3,9 @@ function AdNavSection() {
 
 
     return (
-        <div className="store-entry-section container">
-            <div id="store-entry" className="owl-carousel owl-theme owl-loaded owl-drag">
-                <div className="owl-stage-outer"><div className="owl-stage " style={{ "display":"flex","transform": "translate3d(0px, 0px, 0px)", "transition": "all 0s ease 0s" }}>
+        <div className="store-entry-section container d-none d-lg-block d-xl-block">
+            <div id="store-entry" className="">
+                <div className=""><div className="" style={{ "display":"flex","transform": "translate3d(0px, 0px, 0px)", "transition": "all 0s ease 0s" }}>
                     <div className="owl-item active" ><div className="item">
                         <div className="overlay-area ">
                             <img src="//www.bigbasket.com/media/uploads/banner_images/all_hp-emf_hp_topstrip_m_250722_01.png" alt="Service Guarantee Image" className="img-responsive" />
