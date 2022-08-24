@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import HomePage from './Pages/HomePage/HomPage';
+import HomePage from './Pages/HomePage/HomePage';
 import { useDispatch } from 'react-redux/es/exports';
 import { getProduct } from './Redux/Action/Action';
 import Checkout from './Pages/CheckoutResponsive/Checkout';

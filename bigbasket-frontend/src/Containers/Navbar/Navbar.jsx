@@ -18,8 +18,6 @@ const Navbar = () => {
    dispatch(getProduct(type))
   }
 
-  //filter
-
   const [changeNavbar, setChangeNavbar] = useState(true);
   const changeNavBar = () => {
     if (window.scrollY >= 25) {
