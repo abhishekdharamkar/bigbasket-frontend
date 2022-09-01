@@ -73,7 +73,7 @@ const Navbar = () => {
             </form>
             </div>
           <div className="contact-bucket-box">
-            <div className={changeNavbar ? "contacts" : "contacts d-none"}>
+          <div className={changeNavbar ? "contacts" : "contacts d-none"}>
               <div className="phone contacts-option">
                 <i
                   style={{ margin: "0px 5px 0px 5px" }}
